@@ -1,0 +1,40 @@
+/* we kept on running into an issue where there would be a horizontal scrollbar, which, for this device, is just
+totally unnecessary. to get round this, see the html and body styles - this sets the width and height to 100% of
+the viewport (strictly speaking, you should use vw and vh, but % works better) and box-sizing makes sure that
+any padding or border sizes are included in said 100%, rather than excluded, which leads to a horizontal scrollbar.
+the margin property (margin: 0px auto;) of body can also help to get rid of the scrollbar. */
+
+html {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20px;
+    background-color: #FAF9F6;
+}
+
+/* the following class perfectly centers a title and image, with the image beneath the title. the reason this 
+works is because we wanted something in 2-dimensions: 2 rows and 1 column, the first row being the title and
+the second being the image. */
+.header-grid-container {
+    display: grid;
+    place-items: center;
+}
+
+/* flexbox is appropriate for the recipe stuff as all the items can be thought of as being on the same line, unlike
+the header, where items are on different lines. */
+.recipe-flexbox-container {
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.recipe-flexbox-item {
+    width: 50%;
+}
+
+p {
+    text-align: center;
+}
