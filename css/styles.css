@@ -11,16 +11,21 @@ html {
 }
 
 body {
+    font-family: 'ABeeZee', sans-serif;
     padding: 20px;
     background-color: #FAF9F6;
+    max-width: 100%;
+    height: auto;
 }
 
-/* the following class perfectly centers a title and image, with the image beneath the title. the reason this 
-works is because we wanted something in 2-dimensions: 2 rows and 1 column, the first row being the title and
-the second being the image. */
 .header-grid-container {
-    display: grid;
-    place-items: center;
+    display: flex;
+    max-height: 100%;
+    align-items: center;
+}
+
+.header-grid-item {
+    margin: 10px;
 }
 
 /* flexbox is appropriate for the recipe stuff as all the items can be thought of as being on the same line, unlike
@@ -35,6 +40,10 @@ the header, where items are on different lines. */
     width: 50%;
 }
 
-p {
-    text-align: center;
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDF1D8;
 }
