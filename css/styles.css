@@ -8,20 +8,20 @@ html {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 body {
     font-family: 'ABeeZee', sans-serif;
-    padding: 20px;
     background-color: #FAF9F6;
     max-width: 100%;
     height: auto;
 }
 
 .header-grid-container {
-    display: flex;
-    max-height: 100%;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 95vh;
 }
 
 .header-grid-item {
@@ -31,6 +31,7 @@ body {
 /* flexbox is appropriate for the recipe stuff as all the items can be thought of as being on the same line, unlike
 the header, where items are on different lines. */
 .recipe-flexbox-container {
+    margin-top: 30px;
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
@@ -40,8 +41,30 @@ the header, where items are on different lines. */
     width: 50%;
 }
 
+/* this makes the image section of the div a bit larger. */
+.image {
+    grid-column: 3/6;
+}
+
+/* height and width are in percentages so it fills up the whole of the div container. object-fit is set to cover so 
+all the space in the container is taken with the aspect ratio being maintained. object-position shifts the image
+around a bit. */
+.header-grid-item > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 63%;
+    border-radius: 10px;
+}
+
+.title {
+    grid-column: 1/3;
+    align-self: center;
+    font-size: 2rem;
+}
 
 .footer {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
